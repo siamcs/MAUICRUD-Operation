@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PracticeMAUI.EmployeeDetailPage"
+             Title="EmployeeDetailPage">
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="10">
+            <Frame>
+                <Entry x:Name="EmployeeId" Text="{Binding EmployeeId, Mode=TwoWay}" Placeholder="Enter EmployeeId"/>
+            </Frame>
+            <Frame>
+                <Entry x:Name="EmployeeName" Text="{Binding EmployeeName, Mode=TwoWay}" Placeholder="Enter Name"/>
+            </Frame>
+            <Frame>
+                <DatePicker x:Name="JoinDate" Date="{Binding JoinDate, Mode=TwoWay}"/>
+            </Frame>
+            <Frame>
+                <Entry Placeholder="Enter salary" x:Name="Salary" Text="{Binding Salary, Mode=TwoWay}"/>
+            </Frame>
+            <Frame>
+                <Switch x:Name="IsActive" IsToggled="{Binding IsActive, Mode=TwoWay}"/>
+            </Frame>
+
+            <Frame>
+                <!--<Image Source="{Binding ImageUrl, Converter={StaticResource Base64ToImageConverter}}" HeightRequest="100" x:Name="Upload_Image" HorizontalOptions="Center" />-->
+
+            </Frame>
+            <StackLayout>
+                <Image Source="{Binding ImageUrl, Converter={StaticResource Base64ToImageConverter}}" HeightRequest="100" x:Name="Upload_Image" HorizontalOptions="Center" />
+                <Button x:Name="btnUpload" Text="Upload" HorizontalOptions="End" Clicked="btnUpload_Clicked"/>
+            </StackLayout>
+            <Frame>
+                <StackLayout>
+                    <Button x:Name="btnAddEmployee" Text="Add Employee" HorizontalOptions="End" Clicked="btnAddEmployee_Clicked"/>
+                    <Button x:Name="btnUpdateEmployee" Text="Update Employee" 
+HorizontalOptions="End" Clicked="btnUpdateEmployee_Clicked"/>
+                </StackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+</ContentPage>

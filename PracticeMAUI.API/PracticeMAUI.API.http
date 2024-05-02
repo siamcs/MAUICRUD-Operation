@@ -1,0 +1,6 @@
+@PracticeMAUI.API_HostAddress = http://localhost:5269
+
+GET {{PracticeMAUI.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
